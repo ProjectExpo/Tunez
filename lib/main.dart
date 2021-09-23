@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:tunez/Create.dart';
 import 'package:tunez/Forget.dart';
 import 'HomePage.dart';
@@ -25,29 +26,25 @@ class _LoginDemoState extends State<LoginDemo> {
   @override
   Widget build(BuildContext context) {
     return Material(
-
-      child: SingleChildScrollView(
+      color: Color(0xff220E24),
+      child: SafeArea(
         child: Center(
           child: Container(
-
-            decoration: BoxDecoration(
-
-
-
-              color:Color(0xff220E24),
-
-            ),
-
             child: Column(
               children: <Widget>[
+                Container(
+                  margin: EdgeInsets.only(top: 51),
+                  child: Text('Tunez',
+                    style: GoogleFonts.lobster(
+                      fontSize: 40,
+                      color: Colors.white
+                  ),),
+                ),
                 Center(
                   child: Container(
-
-                    margin: EdgeInsets.all(100),
-                    width: 250,
-                    height: 200,
-
-
+                    margin: EdgeInsets.only(top: 40, left: 7),
+                    width: 368,
+                    height: 368,
 
                     child: Image(image: AssetImage('images/tunezzz.png')),
                   ),
@@ -56,53 +53,35 @@ class _LoginDemoState extends State<LoginDemo> {
                   height:130,
                 ),
                 Container(
-                  height: 50,
-                  width: 300,
+                  margin: EdgeInsets.symmetric(horizontal: 60),
                   decoration: BoxDecoration(
-                    color: Colors.blue, borderRadius: BorderRadius.circular(30),
-
+                    color: Color(0xff5454C5),
+                    borderRadius: BorderRadius.circular(30),
                   ),
-
-                  child: FlatButton(
-                    onPressed: () {
-                      Navigator.push(context,MaterialPageRoute(builder:(context) =>HomePage()));
-
+                  child: MaterialButton(
+                    onPressed: (){
+                      Navigator.pushReplacement(context,MaterialPageRoute(builder:(context) =>HomePage()));
                     },
-                    child:Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children:<Widget> [
-                        Container(
-                          padding: EdgeInsets.only(left: 50),
+                    child: Container(
 
-                          child: Text("Get Started",style: TextStyle(color: Colors.white,fontSize: 25),),
-                        ),
-                        Container(
-                          margin: EdgeInsets.all(0),
-                          height: 30,
-                            width: 50,
-                          child: MaterialButton(
-                              onPressed: (){
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children:<Widget> [
+                          Container(
+                            padding: EdgeInsets.only(left: 10),
 
-                                Navigator.push(context,MaterialPageRoute(builder:(context) =>HomePage()));
-
-                              },
-                              
-
-                              child:
-
-                              Icon(Icons.forward),textColor:(Colors.white),),
-                        )
-
-                      ],
-                    )
-
+                            child: Text(
+                              "Get Started",
+                              style: TextStyle(color: Colors.white,fontSize: 25),),
+                          ),
+                          Container(
+                            child:
+                                Icon(Icons.arrow_forward_ios_rounded,color: Colors.white),),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-                SizedBox(
-                  height:250,
-                ),
-
-
               ],
             ),
           ),
