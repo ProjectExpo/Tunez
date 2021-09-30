@@ -1,6 +1,7 @@
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tunez/Playlist.dart';
 import 'package:tunez/profile.dart';
 
 class Front extends StatefulWidget {
@@ -13,8 +14,8 @@ class _FrontState extends State<Front> {
   int tabIndex =0;
 
   List tabs =[
-    Profile(),
-    Profile(),
+    Playlist(),
+    Playlist(),
     Profile(),
     Profile(),
   ];
@@ -23,7 +24,7 @@ class _FrontState extends State<Front> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff220E24),
-      body: Profile(),
+      body: tabs[tabIndex],
       extendBody: true,
       bottomNavigationBar:  DotNavigationBar(
 
@@ -37,6 +38,7 @@ class _FrontState extends State<Front> {
 
         backgroundColor: Color(0xff220E24),
         dotIndicatorColor: Colors.white,
+        enableFloatingNavBar:false ,
         items: [
           DotNavigationBarItem(
             icon: Icon(Icons.home),
