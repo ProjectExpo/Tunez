@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tunez/Create.dart';
 import 'package:tunez/Example.dart';
-import 'package:tunez/Forget.dart';
-import 'package:tunez/First.dart';
 
 
 class Forget extends StatelessWidget {

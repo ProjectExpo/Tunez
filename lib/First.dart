@@ -1,6 +1,7 @@
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tunez/DashBoard.dart';
 import 'package:tunez/Playlist.dart';
 import 'package:tunez/profile.dart';
 
@@ -14,7 +15,7 @@ class _FrontState extends State<Front> {
   int tabIndex =0;
 
   List tabs =[
-    Playlist(),
+    DashBoard(),
     Playlist(),
     Profile(),
     Profile(),
@@ -25,7 +26,7 @@ class _FrontState extends State<Front> {
     return Scaffold(
       backgroundColor: Color(0xff220E24),
       body: tabs[tabIndex],
-      extendBody: true,
+      extendBody: false,
       bottomNavigationBar:  DotNavigationBar(
 
         currentIndex: tabIndex,
@@ -38,7 +39,6 @@ class _FrontState extends State<Front> {
 
         backgroundColor: Color(0xff220E24),
         dotIndicatorColor: Colors.white,
-        enableFloatingNavBar:false ,
         items: [
           DotNavigationBarItem(
             icon: Icon(Icons.home),
